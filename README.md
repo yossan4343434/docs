@@ -1,5 +1,5 @@
 # docs
 resource documents and specifications
-** push is allowed **
+**push is allowed**
 ## contents
 - railsdoc.md
