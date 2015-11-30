@@ -20,7 +20,7 @@ model for managing videos
  - id: integer
  - title: string
  - url: string (stroed place)
- - category_id: integer
+ - category: integer
  - author: string
  - description: text
  - duration: float (length in seconds)
@@ -28,32 +28,8 @@ model for managing videos
 
 **relation**
 has_many :sounds, through: :video_sounds
-has_many :categories, through: :video_category
-has_many :video_category
-has_many :video_sounds 
+has_many :video_sounds
 has_many :thumbnails
-
-
-## Category
-
-**property**
- - id: integer
- - name: string
-
-**relation**
-has_many :videos, through: :video_category
-has_many :video_category
-
-## VideoCategory
-**property**
- - id:integer
- - video_id:integer
- - category_id:integer
- 
-**relation**
-belongs_to :video
-belongs_to :category
-
 
 ## Sound
 model for managing jingles and voices
@@ -77,7 +53,7 @@ timerecord of sounds in videos
  - video_id:integer
  - sound_id:integer
  - time:float (in seconds)
- 
+
 **relation**
 belongs_to :video
 belongs_to :sound
